@@ -7,14 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PaintClicker.DataBaseModels
+namespace PaintClicker.DatabaseModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Playe
     {
         public string Email { get; set; }
         public string Name { get; set; }
+        public int PaintChips { get; set; }
+        public int PaintChuncks { get; set; }
+        public int Chisels { get; set; }
+        public int Workers { get; set; }
     }
 }

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PaintClicker.DataBaseModels
+namespace PaintClicker.DatabaseModels
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebClickerGameUsers : DbContext
+    public partial class WebClickerGameEntities : DbContext
     {
-        public WebClickerGameUsers()
-            : base("name=WebClickerGameUsers")
+        public WebClickerGameEntities()
+            : base("name=WebClickerGameEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace PaintClicker.DataBaseModels
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Playe> Playes { get; set; }
     }
 }
