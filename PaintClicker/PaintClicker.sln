@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaintClicker", "PaintClicker\PaintClicker.csproj", "{A838A112-C4D8-44F7-801C-381C6220BBA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaintClicker.Tests", "PaintClicker.Tests\PaintClicker.Tests.csproj", "{B12E0BFC-8702-477D-A5D4-370AD8094A99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A838A112-C4D8-44F7-801C-381C6220BBA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A838A112-C4D8-44F7-801C-381C6220BBA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A838A112-C4D8-44F7-801C-381C6220BBA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A838A112-C4D8-44F7-801C-381C6220BBA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B12E0BFC-8702-477D-A5D4-370AD8094A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B12E0BFC-8702-477D-A5D4-370AD8094A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B12E0BFC-8702-477D-A5D4-370AD8094A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B12E0BFC-8702-477D-A5D4-370AD8094A99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
