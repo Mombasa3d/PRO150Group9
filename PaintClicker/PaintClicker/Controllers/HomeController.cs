@@ -12,5 +12,7 @@ namespace PaintClicker.Controllers
         {
             return View();
         }
+
+        
     }
 }
