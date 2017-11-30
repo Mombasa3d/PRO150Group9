@@ -225,6 +225,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Clicker.css" />
     <Content Include="DatabaseModels\PlayerModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PlayerModel.edmx</DependentUpon>

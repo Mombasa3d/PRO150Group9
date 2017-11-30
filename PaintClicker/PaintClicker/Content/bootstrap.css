@@ -6054,12 +6054,14 @@ a.badge:focus {
     padding-bottom: 30px;
     margin-bottom: 30px;
     color: inherit;
+    text-align: center;
     background-color: #1c1e22;
 }
 
     .jumbotron h1,
     .jumbotron .h1 {
         color: inherit;
+        text-align: center;
     }
 
     .jumbotron p {

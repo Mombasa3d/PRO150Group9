@@ -1,4 +1,8 @@
-﻿body {
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -21,4 +25,40 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.gameContainer {
+    width: 800px;
+    height: 700px;
+    margin: auto;
+    display: table;
+    text-align: center;
+}
+
+.generationDiv {
+    padding: 30px;
+
+}
+
+
+.paintFlexParent {
+    width: 700px;
+    background-color: darkslategrey;
+}
+.paintFlex{
+    display:table;
+
+    justify-content: space-around;
+
+}
+
+.buttonAlpha {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px;
+    display: table-cell;
+    vertical-align: bottom;
+        width:800px;
+    height: 100px;
+    font-size: 20px;
 }
