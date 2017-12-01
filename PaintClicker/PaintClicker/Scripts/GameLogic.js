@@ -1,9 +1,13 @@
 ﻿var paintChips = 0;
 var chisels = 0;
-var chiselPrice = 10;
+var chiselPrice = 50;
 var workers = 0;
-var workerPrice = 100;
+var workerPrice = 10;
 var tickRate = 1000;
+
+document.getElementById("chiselButton").onclick = purchaseChisel;
+document.getElementById("workerButton").onclick = purchaseWorker;
+setInterval(tick, tickRate);
 
 function click()
 {
@@ -18,8 +22,8 @@ function click()
 
 document.getElementById("chipButton").onclick = click;
 
-function tick()
-{
+function tick() {
+    console.log("test");
     var amountToIncrease = 0;
 
     amountToIncrease += workers * 1;
@@ -29,20 +33,12 @@ function tick()
     document.getElementById("chipCount").innerHTML = paintChips;
 }
 
-function updateAutoClick()
-{
-    setInterval(tick, tickRate);
-}
-
-updateAutoClick();
-
 function purchaseChisel()
 {
     if (paintChips >= chiselPrice) {
         paintChips -= chiselPrice;
         chiselPrice = Math.round(Math.pow(chiselPrice, 1.05));
         chisels++;
-        document.getElementById("chipCount").innerHTML = paintChips;
     }
 }
 
@@ -50,11 +46,7 @@ function purchaseWorker()
 {
     if (paintChips >= workerPrice) {
         paintChips -= workerPrice;
-        workerPrice = Math.Round(Math.Pow(workerPrice, 1.05));
+        workerPrice = Math.round(Math.pow(workerPrice, 1.05));
         workers++;
-        document.getElementById("chipCount").innerHTML = paintChips;
     }
 }
-
-document.getElementById("chiselButton").onclick = purchaseChisel();
-document.getElementById("workerButton").onclick = purchaseWorker();
