@@ -1,18 +1,18 @@
 ﻿@*<div class="gameContainer">
-    <div class="paintFlexParent">
-        <table>
-            <tr>
-                <th>Upgrade</th>
-                <th>Price</th>
-                <th>Amount</th>
-            </tr>
-            @* For each (upgrade/too/item) add a new row with each variable's information
-        </table>
-    </div>
-    <div class="generationDiv">
-        <button id="chipGen" type="button" class="buttonAlpha buttonBeta">Generate Paint Chips</button>
-    </div>
-</div>*@
+        <div class="paintFlexParent">
+            <table>
+                <tr>
+                    <th>Upgrade</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                </tr>
+                @* For each (upgrade/too/item) add a new row with each variable's information
+            </table>
+        </div>
+        <div class="generationDiv">
+            <button id="chipGen" type="button" class="buttonAlpha buttonBeta">Generate Paint Chips</button>
+        </div>
+    </div>*@
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,12 +24,29 @@
 </head>
 <body>
     <div class="row">
-        <div class="column middle" style="background-color: #02547D;">Column</div>
-        <div class="column side" style="background-color: #0284A8;">Column</div>
+        <div class="column middle" style="background-color: #02547D;">
+            <div class="upgradePanel" id="clickUpgrades" style="overflow-y:scroll auto">
+                <button class="inventoryButton" type="button" id="chiselButton">Buy Chisel</button>
+            </div>
+            <div class="upgradePanel" id="generationUpgrades" style="overflow-y:scroll auto">
+                <button class="inventoryButton" type="button" id="workerButton">Buy Worker</button>
+            </div>
+
+            @*Shop Items and Upgrades go here*@
+
+        </div>
+        <div class="column side" style="background-color: #0284A8;">
+            <div id="playerStats">
+                <text id="chipCount">0</text>
+            </div>
+
+            @* Player stats and inventory go here *@
+            Column 2
+        </div>
     </div>
 
     <div class="footer">
-        <button  class="paintClick" type="button">CHIP</button>
+        <button class="paintClick" type="button" id="chipButton">CHIP</button>
     </div>
 
 </body>
