@@ -7,6 +7,7 @@ var mixers = 0;
 var mixerPrice = 25;
 var tickRate = 1000;
 
+document.getElementById("chipButton").onclick = click;
 document.getElementById("chiselButton").onclick = purchaseChisel;
 document.getElementById("workerButton").onclick = purchaseWorker;
 document.getElementById("mixerButton").onclick = purchaseMixer;
@@ -18,20 +19,20 @@ function click()
 
     amountToIncrease += chisels * 2.5;
     amountToIncrease += workers * 1.5;
-    amountToIncrease += mixer * 2;
+    amountToIncrease += mixers * 2;
 
     paintChips += amountToIncrease;
 
     document.getElementById("chipCount").innerHTML = paintChips;
+    Console.log("Test");
 }
-
-document.getElementById("chipButton").onclick = click;
 
 function tick() {
     console.log("test");
     var amountToIncrease = 0;
 
-    amountToIncrease += workers * 1;
+    amountToIncrease += workers * 1.2;
+    amountToIncrease += mixers * 1;
 
     paintChips += amountToIncrease;
 
@@ -42,7 +43,7 @@ function purchaseChisel()
 {
     if (paintChips >= chiselPrice) {
         paintChips -= chiselPrice;
-        chiselPrice = Math.round(Math.pow(chiselPrice, 1.05));
+        chiselPrice = Math.round(Math.pow(chiselPrice, 1.02));
         chisels++;
     }
 }
@@ -51,7 +52,7 @@ function purchaseWorker()
 {
     if (paintChips >= workerPrice) {
         paintChips -= workerPrice;
-        workerPrice = Math.round(Math.pow(workerPrice, 1.05));
+        workerPrice = Math.round(Math.pow(workerPrice, 1.07));
         workers++;
     }
 }
@@ -59,7 +60,7 @@ function purchaseWorker()
 function purchaseMixer() {
     if (paintChips >= mixerPrice) {
         paintChips -= mixerPrice;
-        workerPrice = Math.round(Math.pow(mixerPrice, 1.05));
+        workerPrice = Math.round(Math.pow(mixerPrice, 1.04));
         mixers++;
     }
 }
