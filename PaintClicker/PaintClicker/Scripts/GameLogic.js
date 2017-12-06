@@ -1,9 +1,14 @@
-﻿var paintChips = 50;
+﻿var paintChipsHTML = document.getElementById("chipCount");
+var chiselsHTML = document.getElementById("chisels");
+var workersHTML = document.getElementById("workers");
+var mixersHTML = document.getElementById("mixers");
+
+var paintChips = 0;
 var chisels = 0;
-var chiselPrice = 50;
 var workers = 0;
-var workerPrice = 10;
 var mixers = 0;
+var chiselPrice = 50;
+var workerPrice = 10;
 var mixerPrice = 25;
 var tickRate = 1000;
 
@@ -23,21 +28,17 @@ function click()
     amountToIncrease += mixers * 2;
 
     paintChips += amountToIncrease;
-
-    document.getElementById("chipCount").innerHTML = paintChips;
-    Console.log("Test");
+    paintChipsHTML.innerText = paintChips;
 }
 
 function tick() {
-    console.log("test");
     var amountToIncrease = 0;
 
     amountToIncrease += workers * 1.5;
     amountToIncrease += mixers * 1;
 
     paintChips += amountToIncrease;
-
-    document.getElementById("chipCount").innerHTML = paintChips;
+    paintChipsHTML.innerText = paintChips;
 }
 
 function purchaseChisel()
@@ -70,3 +71,18 @@ function purchaseMixer() {
         document.getElementById('chiselButton').innerHTML = "Buy Mixer " + mixers;
     }
 }
+
+
+
+$("#SaveButton").click(function (e) {
+    console.log("SaveButton Clicked");
+
+    e.preventDefault();
+    $.ajax({
+
+        url: "Home/Save", // comma here instead of semicolon   
+        success: function (paintChips,chisels,workers,mixers) {
+            alert("Saved");  // or any other indication if you want to show
+        }
+    })
+})
