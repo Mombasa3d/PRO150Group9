@@ -5,10 +5,10 @@ var workers = parseInt(document.getElementById("workerAmount").innerText);
 var workerPrice = 10;
 var mixers = parseInt(document.getElementById("mixerAmount").innerText);
 var mixerPrice = 25;
-var tickRate = 33;
+var tickRate = 33.333333;
 var chipsStart = 0
 var chipsEnd = 0;
-var chipsThisSecond = 0;
+var minute = [];
 
 for (var i = 0; i < chisels; i++) {
     chiselPrice = Math.round(Math.pow(chiselPrice, 1.02));
@@ -30,17 +30,41 @@ setInterval(tick, tickRate);
 setInterval(calculateChipsPerSecond, 1000);
 
 function calculateChipsPerSecond() {
-    chipsEnd = document.getElementById("chipCount").innerHTML;
-    chipsThisSecond = chipsEnd - chipsStart;
-    document.getElementById("chipsPerSecond").innerHTML = Math.round(chipsThisSecond);
-    chipsStart = document.getElementById("chipCount").innerHTML;
+    chipsEnd = paintChips;
+    var chipsThisSecond = chipsEnd - chipsStart;
+
+    if (minute.length == 5)
+    {
+        minute.shift();
+    }
+
+    if (chipsThisSecond >= 0)
+    {
+        minute.push(chipsThisSecond);
+    }
+
+    var avg = 0;
+
+    for (var i = 0; i < minute.length; i++)
+    {
+        avg += minute[i];
+    }
+
+    if (avg != 0)
+    {
+        avg = avg/minute.length;
+        avg = Math.round(avg);
+    }
+
+    document.getElementById("chipsPerSecond").innerHTML = avg;
+
+    chipsStart = paintChips;
 }
 
 function click() {
     var amountToIncrease = 1;
 
-    amountToIncrease += chisels * 2.5;
-    amountToIncrease += workers * 1.5;
+    amountToIncrease += chisels * 1;
     amountToIncrease += mixers * 2;
 
     paintChips += amountToIncrease;
@@ -51,7 +75,7 @@ function click() {
 function tick() {
     var amountToIncrease = 0;
 
-    amountToIncrease += workers * 1.2;
+    amountToIncrease += workers * 1;
     amountToIncrease += mixers * 1;
 
     amountToIncrease /= 30;
@@ -64,8 +88,11 @@ function tick() {
 function purchaseChisel() {
     if (paintChips >= chiselPrice) {
         paintChips -= chiselPrice;
-        chiselPrice = Math.round(Math.pow(chiselPrice, 1.02));
+        chiselPrice = Math.round(Math.pow(chiselPrice, 1.1));
         chisels++;
+
+        document.getElementById("chiselAmount").innerHTML = chisels;
+        document.getElementById("chiselPrice").innerHTML = chiselPrice;
     }
 }
 
@@ -74,14 +101,20 @@ function purchaseWorker() {
         paintChips -= workerPrice;
         workerPrice = Math.round(Math.pow(workerPrice, 1.07));
         workers++;
+
+        document.getElementById("workerAmount").innerHTML = workers;
+        document.getElementById("workerPrice").innerHTML = workerPrice;
     }
 }
 
 function purchaseMixer() {
     if (paintChips >= mixerPrice) {
         paintChips -= mixerPrice;
-        workerPrice = Math.round(Math.pow(mixerPrice, 1.04));
+        mixerPrice = Math.round(Math.pow(mixerPrice, 1.5));
         mixers++;
+
+        document.getElementById("mixerAmount").innerHTML = mixers;
+        document.getElementById("mixerPrice").innerHTML = mixerPrice;
     }
 }
 
