@@ -13,41 +13,77 @@ body {
     text-align: center;
 }
 
-/* Container for flexboxes */
-.row {
-    display: flex;
+
+
+#content, html, body {
+    height: 98%;
 }
 
-/* Create three unequal columns that sits next to each other */
-.column {
-    padding: 10px;
-    height: 200px; /* Should be removed. Only for demonstration */
+#clickPanel {
+    float: left;
+    height: 100%;
+    width: 33.33%;
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
 }
 
-    /* Left and right column */
-    .column.side {
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        height: 650px; 
-        border: solid 5px;
-    }
+#clickPanel p{
+    
+}
 
-    /* Middle column */
-    .column.middle {
-        -webkit-flex: 1;
-        -ms-flex: 2;
-        flex: 2;
-        height: 650px;
-        border: solid 5px;
-    }
-    .column.rightside{
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        height: 650px;
-        border: solid 5px;
-    }
+&:focus{
+    outline:none;
+}
+
+#generationUpgrades {
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow: hidden;
+    padding-right: 17px;
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    border-left: solid 2px black;
+    border-right: solid 5px black;
+    background: 
+}
+
+#clickUpgrades {
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow: hidden;
+    padding-right: 10px;
+    border-top:solid 5px black;
+    border-bottom:solid 5px black;
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+}
+
+.container {
+    padding:0;
+    margin:auto;
+    width:90%;
+}
+
+.shopParent {
+    height: 100%;
+    width: 100%;
+}
+
+.shopContainer {
+    text-align: center;
+    margin: auto;
+}
+
+.mainContainer {
+    background: rgba(0, 0, 0, .3);
+    align-content: center;
+}
+
 
 /* Style the footer */
 .footer {
@@ -58,11 +94,22 @@ body {
     border-top: solid 5px;
 }
 
-.paintClick{
-    width: 80%;
-    height: 100px;
-    font-size: 40px;
-    color: black;   
+.paintClick {
+    width: 105px;
+    height: 105px;
+    border: solid 2px black;
+    margin-top:50%;
+    background: url(https://png.icons8.com/?id=17516&size=2x) 0px 0px no-repeat;
+    font-size: 50px;
+}
+
+
+.jumbotron{
+    background: rgba(0, 0, 0, .20);
+    height: 200px;
+    text-align:center;
+    align-items: center;
+    margin-bottom:50px;
 }
 
 .inventoryButton {
@@ -75,5 +122,6 @@ body {
     .row {
         -webkit-flex-direction: column;
         flex-direction: column;
+        height: 800px;
     }
 }

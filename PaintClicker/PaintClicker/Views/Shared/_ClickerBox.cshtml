@@ -1,4 +1,6 @@
-﻿@*<div class="gameContainer">
+﻿@model PaintClicker.Models.ApplicationUser
+@using PaintClicker.DatabaseModels
+@*<div class="gameContainer">
         <div class="paintFlexParent">
             <table>
                 <tr>
@@ -14,51 +16,98 @@
         </div>
     </div>*@
 
+@{
+    Playe player = new Playe()
+    {
+        Chisels = 0,
+        Email = "",
+        Mixer = 0,
+        Name = "",
+        PaintChips = 0,
+        PaintChuncks = 0,
+        Workers = 0
+    };
+    if (User.Identity.IsAuthenticated)
+    {
+        player = new Playe();
+        using (var db = new WebClickerGameEntities())
+        {
+            List<Playe> queryResult = null;
+            //queryResult = db.Playes.Where(x => x.Email == Model.Email).ToList();
+
+            if (queryResult != null)
+            {
+                player = queryResult.First();
+            }
+            else
+            {
+                player = new Playe()
+                {
+                    Chisels = 0,
+                    Email = Model.Email,
+                    Mixer = 0,
+                    Name = Model.UserName,
+                    PaintChips = 0,
+                    PaintChuncks = 0,
+                    Workers = 0
+                };
+            }
+        }
+    }
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Paint Clicker</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/Clicker.css">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
+
 </head>
+
 <body>
     <div class="row">
-
-        <div class="column side" style="background-color: #0284A8;">
-            <div id="playerStats">
-                <text id="chipCount">0</text>
-
-                <button class="paintClick" type="button" id="chipButton">CHIP</button>
-            </div>
-
-            @* Player stats and inventory go here *@
-        </div>
-
-        <div class="column middle" style="background-color: #02547D;">
-            <div class="upgradePanel" id="clickUpgrades" style="overflow-y:scroll auto">
-                <div style="display:table;">
-                    <div style="display:table-cell;vertical-align:middle;">
-                        <div style="margin-left:auto;margin-right:auto;">
-                            <button class="inventoryButton" type="button" id="chiselButton">Buy Chisel</button>
-                            <text id="chisels">0</text>
-                            <button class="inventoryButton" type="button" id="workerButton">Buy Worker</button>
-                            <text id="workers">0</text>
-                            <button class="inventoryButton" type="button" id="mixerButton">Buy Mixer</button>
-                            <text id="mixers">0</text>
-                        </div>
-                    </div>
+        <div id="clickUpgrades">
+            <div class="shopParent">
+                <div class="shopContainer">
+                    <button class="inventoryButton" type="button" id="chiselButton">Buy Chisel</button>
+                    <p id="chiselAmount">Owned: 0</p>
+                    <p id="chiselPrice">Price: 50</p>
+                </div>
+                <div class="shopContainer">
+                    <button class="inventoryButton" type="button" id="workerButton"> Buy Worker</button>
+                    <p id="workerAmount">Owned: 0</p>
+                    <p id="workerPrice">Price: 10/p>
+                </div>
+                <div class="shopContainer">
+                    <button class="inventoryButton" type="button" id="mixerButton">Buy Mixer</button>
+                    <p id="mixerAmount">Owned: 0</p>
+                    <p id="mixerPrice">Price: 25</p>
                 </div>
             </div>
-            <div class="upgradePanel" id="generationUpgrades" style="overflow-y:scroll auto">
+        </div>
+
+        <div id="clickPanel" class="mainContainer">
+            <div id="playerStats">
+                <p>Chips Generated:</p>
+                <text id="chipCount">@player.PaintChips</text>
+                <p id="chipsPerSecond"></p>
+                <button class="paintClick" type="button" id="chipButton"></button>
             </div>
-            @*Shop Items and Upgrades go here*@
+        </div>
+
+
+        <div id="generationUpgrades" class="mainContainer">
         </div>
     </div>
-
+    @Html.HiddenFor(x => Model.Email, new { id = "EmailHidden" })
+    <script src="~/Scripts/GameLogic.js" type="text/javascript"></script>
 </body>
-</html>
-<script src="~/Scripts/GameLogic.js" type="text/javascript"></script>
 
+</html>
 
 

@@ -4,6 +4,10 @@ var chiselPrice = 50;
 var workers = parseInt(document.getElementById("workers").innerHTML);
 var workerPrice = 10;
 var mixers = parseInt(document.getElementById("mixers").innerHTML);
+﻿var paintChipsHTML = document.getElementById("chipCount");
+var chiselsHTML = document.getElementById("chisels");
+var workersHTML = document.getElementById("workers");
+var mixersHTML = document.getElementById("mixers");
 var mixerPrice = 25;
 var tickRate = 33;
 var chipsStart = 0
@@ -27,6 +31,7 @@ document.getElementById("chipButton").onclick = click;
 document.getElementById("chiselButton").onclick = purchaseChisel;
 document.getElementById("workerButton").onclick = purchaseWorker;
 document.getElementById("mixerButton").onclick = purchaseMixer;
+
 setInterval(tick, tickRate);
 setInterval(calculateChipsPerSecond, 1000);
 
@@ -47,22 +52,20 @@ function click()
     amountToIncrease += mixers * 2;
 
     paintChips += amountToIncrease;
-
-    document.getElementById("chipCount").innerHTML = paintChips;
-    Console.log("Test");
+    paintChipsHTML.innerText = paintChips;
 }
 
 function tick() {
     var amountToIncrease = 0;
 
-    amountToIncrease += workers * 1.2;
+    amountToIncrease += workers * 1.5;
     amountToIncrease += mixers * 1;
 
     amountToIncrease /= 30;
 
     paintChips += amountToIncrease;
 
-    document.getElementById("chipCount").innerHTML = Math.round(paintChips);
+    paintChipsHTML.innerText = Math.round(paintChips);
 }
 
 function purchaseChisel()
@@ -71,6 +74,8 @@ function purchaseChisel()
         paintChips -= chiselPrice;
         chiselPrice = Math.round(Math.pow(chiselPrice, 1.02));
         chisels++;
+        document.getElementById('chiselAmount').innerHTML = "Owned:" + chisels;
+        document.getElementById('chiselPrice').innerHTML = "Price: " + chiselPrice + " chips";
     }
 }
 
@@ -80,6 +85,8 @@ function purchaseWorker()
         paintChips -= workerPrice;
         workerPrice = Math.round(Math.pow(workerPrice, 1.07));
         workers++;
+        document.getElementById('workerAmount').innerHTML = "Owned: " + workerPrice;
+        document.getElementById('workerPrice').innerHTML = "Price: " + workerPrice + " chips";
     }
 }
 
@@ -88,5 +95,21 @@ function purchaseMixer() {
         paintChips -= mixerPrice;
         workerPrice = Math.round(Math.pow(mixerPrice, 1.04));
         mixers++;
+        document.getElementById('chiselButton').innerHTML = "Buy Mixer " + mixers;
     }
 }
+
+
+
+$("#SaveButton").click(function (e) {
+    console.log("SaveButton Clicked");
+
+    e.preventDefault();
+    $.ajax({
+
+        url: "Home/Save?PaintChips=" + paintChips + "&Chisels=" + chisels + "&Workers=" + workers + "&Mixers=" + mixers + "&Email=" + document.getElementById("EmailHidden"),   
+        success: function () {
+            alert("Saved");
+        }
+    })
+})
