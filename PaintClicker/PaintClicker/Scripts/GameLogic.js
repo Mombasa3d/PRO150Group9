@@ -80,9 +80,9 @@ $("#SaveButton").click(function (e) {
     e.preventDefault();
     $.ajax({
 
-        url: "Home/Save", // comma here instead of semicolon   
-        success: function (paintChips,chisels,workers,mixers) {
-            alert("Saved");  // or any other indication if you want to show
+        url: "Home/Save?PaintChips=" + paintChips + "&Chisels=" + chisels + "&Workers=" + workers + "&Mixers=" + mixers + "&Email=" + document.getElementById("EmailHidden"),   
+        success: function () {
+            alert("Saved");
         }
     })
 })
