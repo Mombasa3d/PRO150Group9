@@ -22,56 +22,61 @@ body {
 #clickPanel {
     float: left;
     height: 100%;
-    width: 33.33%;
+    width: 50%;
     align-items: center;
     text-align: center;
     font-size: 50px;
-}
-
-#clickPanel p{
-    
-}
-
-&:focus{
-    outline:none;
-}
-
-#generationUpgrades {
-    float: left;
-    width: 33.33%;
-    height: 100%;
-    overflow-y: scroll;
-    overflow: hidden;
-    padding-right: 17px;
     border-top: solid 5px black;
     border-bottom: solid 5px black;
-    border-left: solid 2px black;
-    border-right: solid 5px black;
-    background: 
-}
-
-#clickUpgrades {
-    float: left;
-    width: 33.33%;
-    height: 100%;
-    overflow-y: scroll;
-    overflow: hidden;
-    padding-right: 10px;
-    border-top:solid 5px black;
-    border-bottom:solid 5px black;
     border-left: solid 2px black;
     border-right: solid 2px black;
 }
 
-.container {
-    padding:0;
-    margin:auto;
-    width:90%;
+    #clickPanel p {
+    }
+
+&:focus {
+    outline: none;
 }
 
-.shopParent {
+#generationUpgrades {
+    float: left;
+    width: 25%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-top: 10px;
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    border-left: solid 2px black;
+    border-right: solid 5px black;
+    background:
+}
+
+#clickUpgrades {
+    float: left;
+    width: 25%;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    border-left: solid 5px black;
+    border-right: solid 2px black;
+}
+
+.container {
+    padding: 0;
+    margin: auto;
+    width: 90%;
+}
+
+.shopChild {
     height: 100%;
     width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .shopContainer {
@@ -98,19 +103,25 @@ body {
     width: 105px;
     height: 105px;
     border: solid 2px black;
-    margin-top:50%;
+    position: relative;
+    bottom : 10%;
     background: url(https://png.icons8.com/?id=17516&size=2x) 0px 0px no-repeat;
     font-size: 50px;
 }
 
 
-.jumbotron{
+.jumbotron {
     background: rgba(0, 0, 0, .20);
-    height: 200px;
-    text-align:center;
+    height: 160px;
+    padding-top: 0px;
+    text-align: center;
     align-items: center;
-    margin-bottom:50px;
+    margin-bottom: 50px;
 }
+
+    .jumbotron h1 {
+        margin-top: 10px;
+    }
 
 .inventoryButton {
     font-size: 35px;
