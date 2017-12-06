@@ -22,37 +22,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
     <div class="row">
-
-        <div class="column side" style="background-color: #0284A8;">
+        <div id="clickPanel">
             <div id="playerStats">
-                <text id="chipCount">0</text>
-
-                <button class="paintClick" type="button" id="chipButton">CHIP</button>
+                <p id="chipCount">0</p>
+                <p id="chipsPerSecond"></p>
+                <button class="paintClick" type="button" id="chipButton"></button>
             </div>
-
-            @* Player stats and inventory go here *@
         </div>
-
-        <div class="column middle" style="background-color: #02547D;">
-            <div class="upgradePanel" id="clickUpgrades" style="overflow-y:scroll auto">
-                <div style="display:table;">
-                    <div style="display:table-cell;vertical-align:middle;">
-                        <div style="margin-left:auto;margin-right:auto;">
-                            <button class="inventoryButton" type="button" id="chiselButton">Buy Chisel</button>
-                            <text id="chisels">0</text>
-                            <button class="inventoryButton" type="button" id="workerButton">Buy Worker</button>
-                            <text id="workers">0</text>
-                            <button class="inventoryButton" type="button" id="mixerButton">Buy Mixer</button>
-                            <text id="mixers">0</text>
-                        </div>
-                    </div>
-                </div>
+        <div id="clickUpgrades">
+            <div class="shopContainer">
+                <button class="inventoryButton" type="button" id="chiselButton">Buy Chisel </button>
+                <p id="chiselAmount">Owned: </p>
+                <p id="chiselPrice">Price: </p>
             </div>
-            <div class="upgradePanel" id="generationUpgrades" style="overflow-y:scroll auto">
+            <div class="shopContainer">
+                <button class="inventoryButton" type="button" id="workerButton">Buy Worker</button>
+                <p id="workerAmount">Owned:</p>
+                <p id="workerPrice">Price: </p>
             </div>
-            @*Shop Items and Upgrades go here*@
+            <div class="shopContainer">
+                <button class="inventoryButton" type="button" id="mixerButton">Buy Mixer</button>
+                <p id="mixerAmount">Owned: </p>
+                <p id="mixerPrice">Price: </p>
+            </div>
+        </div>
+        <div id="generationUpgrades">
         </div>
     </div>
 
