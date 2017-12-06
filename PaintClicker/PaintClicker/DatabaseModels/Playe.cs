@@ -20,5 +20,6 @@ namespace PaintClicker.DatabaseModels
         public int PaintChuncks { get; set; }
         public int Chisels { get; set; }
         public int Workers { get; set; }
+        public int Mixer { get; set; }
     }
 }
