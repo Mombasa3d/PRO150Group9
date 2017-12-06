@@ -75,33 +75,30 @@
             <div class="shopParent">
                 <div class="shopContainer">
                     <button class="inventoryButton" type="button" id="chiselButton">Buy Chisel</button>
-                    <p id="chiselAmount">Owned: 0</p>
-                    <p id="chiselPrice">Price: 50</p>
+                    <p>
+                        <text>Owned:</text>
+                        <div id="chiselAmount">0</div>
+                        <text>Price:</text>
+                        <div id="chiselPrice">50</div>
+                    </p>
                 </div>
                 <div class="shopContainer">
                     <button class="inventoryButton" type="button" id="workerButton"> Buy Worker</button>
-                    <p id="workerAmount">Owned: 0</p>
-                    <p id="workerPrice">Price: 10</p>
+                    <p>
+                        <text>Owned:</text>
+                        <div id="workerAmount">0</div>
+                        <text>Price:</text>
+                        <div id="workerPrice">10</div>
+                    </p>
                 </div>
                 <div class="shopContainer">
                     <button class="inventoryButton" type="button" id="mixerButton">Buy Mixer</button>
-                    <p id="mixerAmount">Owned: 0</p>
-                    <p id="mixerPrice">Price: 25</p>
-                </div>
-                <div class="shopContainer">
-                    <button class="inventoryButton" type="button" id="chiselButton">Buy Chisel</button>
-                    <p id="chiselAmount">Owned: 0</p>
-                    <p id="chiselPrice">Price: 50</p>
-                </div>
-                <div class="shopContainer">
-                    <button class="inventoryButton" type="button" id="workerButton"> Buy Worker</button>
-                    <p id="workerAmount">Owned: 0</p>
-                    <p id="workerPrice">Price: 10</p>
-                </div>
-                <div class="shopContainer">
-                    <button class="inventoryButton" type="button" id="mixerButton">Buy Mixer</button>
-                    <p id="mixerAmount">Owned: 0</p>
-                    <p id="mixerPrice">Price: 25</p>
+                    <p>
+                        <text>Owned:</text>
+                        <div id="mixerAmount">0</div>
+                        <text>Price:</text>
+                        <div id="mixerPrice">25</div>
+                    </p>
                 </div>
             </div>
         </div>
@@ -109,12 +106,11 @@
         <div id="clickPanel" class="mainContainer">
             <div id="playerStats">
                 <p>Chips Generated:</p>
-                <text id="chipCount">@player.PaintChips</text>
-                <p id="chipsPerSecond"></p>
+                <div id="chipCount">@player.PaintChips</div>
+                <div id="chipsPerSecond">0</div>
                 <button class="paintClick" type="button" id="chipButton"></button>
             </div>
         </div>
-
 
         <div id="generationUpgrades" class="mainContainer">
         </div>

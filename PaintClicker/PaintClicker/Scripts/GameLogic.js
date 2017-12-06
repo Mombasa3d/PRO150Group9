@@ -45,7 +45,7 @@ function click() {
 
     paintChips += amountToIncrease;
 
-    document.getElementById("chipCount").innerHTML = paintChips;
+    document.getElementById("chipCount").innerHTML = Math.round(paintChips);
 }
 
 function tick() {
