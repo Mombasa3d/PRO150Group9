@@ -33,7 +33,7 @@
         using (var db = new WebClickerGameEntities())
         {
             List<Playe> queryResult = null;
-            queryResult = db.Playes.Where(x => x.Email == Model.Email).ToList();
+            //queryResult = db.Playes.Where(x => x.Email == Model.Email).ToList();
 
             if (queryResult != null)
             {
@@ -99,7 +99,8 @@
             @*Shop Items and Upgrades go here*@
         </div>
     </div>
-    @Html.ActionLink("Home", "Save",null,new { id = "SaveButton" });
+    @Html.ActionLink("Home", "Save",null,new { id = "SaveButton" })
+    @Html.HiddenFor(x => Model.Email, new { id = "EmailHidden" })
     <script src="~/Scripts/GameLogic.js" type="text/javascript"></script>
 </body>
 
