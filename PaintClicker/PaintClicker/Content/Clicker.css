@@ -30,6 +30,8 @@ body {
     border-bottom: solid 5px black;
     border-left: solid 2px black;
     border-right: solid 2px black;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: bold;
 }
 
     #clickPanel p {
@@ -49,7 +51,7 @@ body {
     border-bottom: solid 5px black;
     border-left: solid 2px black;
     border-right: solid 5px black;
-    background:
+    user-select: none;
 }
 
 #clickUpgrades {
@@ -64,6 +66,7 @@ body {
     border-bottom: solid 5px black;
     border-left: solid 5px black;
     border-right: solid 2px black;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 .container {
@@ -104,15 +107,21 @@ body {
     height: 105px;
     border: solid 2px black;
     position: relative;
-    bottom : 10%;
+    bottom: 10%;
     background: url(https://png.icons8.com/?id=17516&size=2x) 0px 0px no-repeat;
     font-size: 50px;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
+    #paintClick .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
 
 .jumbotron {
     background: rgba(0, 0, 0, .20);
-    height: 160px;
+    height: 120px;
     padding-top: 0px;
     text-align: center;
     align-items: center;
@@ -120,7 +129,9 @@ body {
 }
 
     .jumbotron h1 {
-        margin-top: 10px;
+        margin-top: 15px;
+        font-family: 'Gloria Hallelujah', cursive;
+        font-weight: bold;
     }
 
 .inventoryButton {
