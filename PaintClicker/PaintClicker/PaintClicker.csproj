@@ -195,7 +195,7 @@
     <Compile Include="Controllers\PlayerEngine.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="DatabaseModels\Playe.cs">
+    <Compile Include="DatabaseModels\Player.cs">
       <DependentUpon>PlayerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DatabaseModels\PlayerModel.Context.cs">

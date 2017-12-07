@@ -11,14 +11,14 @@ namespace PaintClicker.Controllers
 	public class PlayerEngine
 	{
 		public WebClickerGameEntities Players { get; set; } = new WebClickerGameEntities();
-		public void SavePlayer(Playe p)
+		public void SavePlayer(Player p)
 		{
-			if (Players.Playes.Any(player => player.Email == p.Email)) //The player exists in our system.
+			if (Players.Players.Any(player => player.Name == p.Name)) //The player exists in our system.
 			{
-				Playe permenant = Players.Playes.Where(player => player.Email == p.Email).Single();
+				Player permenant = Players.Players.Where(player => player.Name== p.Name).Single();
 				permenant.Name = p.Name;
 				permenant.PaintChips = p.PaintChips;
-				permenant.PaintChuncks = p.PaintChuncks;
+				permenant.PaintChunks = p.PaintChunks;
 				permenant.Workers = p.Workers;
 				permenant.Chisels = p.Chisels;
 
@@ -26,7 +26,7 @@ namespace PaintClicker.Controllers
 			}
 			else //The player does not exist in our system
 			{
-				Players.Playes.Add(p);
+				Players.Players.Add(p);
 				Players.Entry(p).State = System.Data.Entity.EntityState.Added;
 			}
 
