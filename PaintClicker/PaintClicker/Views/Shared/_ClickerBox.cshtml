@@ -1,5 +1,4 @@
-﻿@model PaintClicker.Models.ApplicationUser
-@using PaintClicker.DatabaseModels
+﻿@using PaintClicker.DatabaseModels
 @*<div class="gameContainer">
         <div class="paintFlexParent">
             <table>
@@ -17,40 +16,41 @@
     </div>*@
 
 @{
-    Playe player = new Playe()
+    Player player = new Player()
     {
         Chisels = 0,
-        Email = "",
-        Mixer = 0,
+        Mixers = 0,
         Name = "",
         PaintChips = 0,
-        PaintChuncks = 0,
+        PaintChunks = 0,
         Workers = 0
     };
+
     if (User.Identity.IsAuthenticated)
     {
-        player = new Playe();
+
+        <h1 id="UserName"> @User.Identity.Name</h1>
         using (var db = new WebClickerGameEntities())
         {
-            List<Playe> queryResult = null;
-            //queryResult = db.Playes.Where(x => x.Email == Model.Email).ToList();
-
+            Player queryResult = null;
+            queryResult = db.Players.Find(User.Identity.Name);
             if (queryResult != null)
             {
-                player = queryResult.First();
+                player = queryResult;
             }
             else
             {
-                player = new Playe()
+                player = new Player()
                 {
                     Chisels = 0,
-                    Email = Model.Email,
-                    Mixer = 0,
-                    Name = Model.UserName,
+                    Mixers = 0,
+                    Name = User.Identity.Name,
                     PaintChips = 0,
-                    PaintChuncks = 0,
+                    PaintChunks = 0, 
                     Workers = 0
                 };
+                db.Players.Add(player);
+                db.SaveChanges();
             }
         }
     }
@@ -62,11 +62,9 @@
     <title>Paint Clicker</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/Clicker.css">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
-
 </head>
 
 <body>
@@ -77,7 +75,7 @@
                     <button class="inventoryButton" type="button" id="chiselButton">Buy Chisel</button>
                     <p>
                         <text>Owned:</text>
-                        <div id="chiselAmount">0</div>
+                        <div id="chiselAmount">@player.Chisels</div>
                         <text>Price:</text>
                         <div id="chiselPrice">50</div>
                     </p>
@@ -86,7 +84,7 @@
                     <button class="inventoryButton" type="button" id="workerButton"> Buy Worker</button>
                     <p>
                         <text>Owned:</text>
-                        <div id="workerAmount">0</div>
+                        <div id="workerAmount">@player.Workers</div>
                         <text>Price:</text>
                         <div id="workerPrice">10</div>
                     </p>
@@ -95,7 +93,7 @@
                     <button class="inventoryButton" type="button" id="mixerButton">Buy Mixer</button>
                     <p>
                         <text>Owned:</text>
-                        <div id="mixerAmount">0</div>
+                        <div id="mixerAmount">@player.Mixers</div>
                         <text>Price:</text>
                         <div id="mixerPrice">25</div>
                     </p>
@@ -115,7 +113,8 @@
         <div id="generationUpgrades" class="mainContainer">
         </div>
     </div>
-    @Html.HiddenFor(x => Model.Email, new { id = "EmailHidden" })
+    @Html.ActionLink("Home", "Save", null, new { id = "SaveButton" })
+    @*@Html.HiddenFor(x => User.Identity.Name,new { id = "NameHidden" })*@
     <script src="~/Scripts/GameLogic.js" type="text/javascript"></script>
 </body>
 

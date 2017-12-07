@@ -25,6 +25,6 @@ namespace PaintClicker.DatabaseModels
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Playe> Playes { get; set; }
+        public virtual DbSet<Player> Players { get; set; }
     }
 }

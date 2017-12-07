@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0eac100b555447d69ecc00ece80a9923" Name="Diagram1">
-        <EntityTypeShape EntityType="WebClickerGameModel.Playe" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="c2ff3f6d50144331b11cfe2ab018710b" Name="Diagram1">
+        <EntityTypeShape EntityType="WebClickerGameModel.Player" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

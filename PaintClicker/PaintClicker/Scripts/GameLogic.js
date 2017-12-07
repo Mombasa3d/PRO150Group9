@@ -126,7 +126,7 @@ $("#SaveButton").click(function (e) {
     e.preventDefault();
     $.ajax({
 
-        url: "Home/Save?PaintChips=" + paintChips + "&Chisels=" + chisels + "&Workers=" + workers + "&Mixers=" + mixers + "&Email=" + document.getElementById("EmailHidden"),   
+        url: "Home/Save?PaintChips=" + Math.floor(paintChips) + "&Chisels=" + Math.floor(chisels) + "&Workers=" + Math.floor(workers) + "&Mixers=" + Math.floor(mixers) + "&Name=" + document.getElementById("UserName").innerText,   
         success: function () {
             alert("Saved");
         }
