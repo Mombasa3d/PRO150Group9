@@ -213,6 +213,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PlayerModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseModels\Research.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Research.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModels\Research.cs">
+      <DependentUpon>Research.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModels\Research.Designer.cs">
+      <DependentUpon>Research.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModels\Research1.cs" />
+    <Compile Include="DatabaseModels\Research1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Research.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModels\Research2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Research.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -236,6 +258,14 @@
       <DependentUpon>PlayerModel.edmx</DependentUpon>
       <LastGenOutput>PlayerModel.cs</LastGenOutput>
     </Content>
+    <Content Include="DatabaseModels\Research.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Research.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="DatabaseModels\Research.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Research2.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -251,6 +281,13 @@
     </EntityDeploy>
     <Content Include="DatabaseModels\PlayerModel.edmx.diagram">
       <DependentUpon>PlayerModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="DatabaseModels\Research.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Research1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DatabaseModels\Research.edmx.diagram">
+      <DependentUpon>Research.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\GameLogic.js" />
