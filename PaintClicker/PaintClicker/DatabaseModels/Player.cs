@@ -12,14 +12,13 @@ namespace PaintClicker.DatabaseModels
     using System;
     using System.Collections.Generic;
     
-    public partial class Playe
+    public partial class Player
     {
-        public string Email { get; set; }
         public string Name { get; set; }
         public int PaintChips { get; set; }
-        public int PaintChuncks { get; set; }
+        public int PaintChunks { get; set; }
         public int Chisels { get; set; }
         public int Workers { get; set; }
-        public int Mixer { get; set; }
+        public int Mixers { get; set; }
     }
 }

@@ -10,21 +10,34 @@ namespace PaintClicker.Controllers
 {
     public class HomeController : Controller
     {
-        //Port users to DB
         //Pass user
         public ActionResult Index()
         {
             return View();
         }
         
-        public ActionResult Save(int PaintChips, int Chisels, int Workers, int Mixer,string email)
+        public ActionResult Save(int PaintChips, int Chisels, int Workers, int Mixers,string Name)
         {
+            using (var db = new WebClickerGameEntities())
+            {
+                Player user = db.Players.Find(Name);
 
+                user.PaintChips = PaintChips;
+                //user.PaintChunks = PaintChunks;
+                user.Mixers = Mixers;
+                user.Workers = Workers;
+                user.Chisels = Chisels;
+                db.SaveChanges();
 
-            Debug.Write($"\n\n\n\n\n\n Paint:  {PaintChips}  WE SOMEHOW MADE IT HERE\n" +
-                $"Email: {email}" +
-                $"" +
-                $"\n\n\n\n\n");
+            }
+                Debug.Write($"\n\n" +
+                    $"WE SOMEHOW MADE IT HERE\n" +
+                    $"Paint: {PaintChips}\n" +
+                    $"Name: {Name}\n" +
+                    $"Chisels: {Chisels}\n" +
+                    $"Workers: {Workers}\n" +
+                    $"Mixer: {Mixers}\n" +
+                    $"\n\n");
             return new EmptyResult();
         }
 

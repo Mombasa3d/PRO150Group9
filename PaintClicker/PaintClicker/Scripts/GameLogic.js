@@ -5,7 +5,7 @@ var workers = parseInt(document.getElementById("workerAmount").innerText);
 var workerPrice = 10;
 var mixers = parseInt(document.getElementById("mixerAmount").innerText);
 var mixerPrice = 25;
-var tickRate = 33.333333;
+var tickRate = 1000/10;
 var chipsStart = 0
 var chipsEnd = 0;
 var minute = [];
@@ -22,6 +22,9 @@ for (var i = 0; i < mixers; i++) {
     mixerPrice = Math.round(Math.pow(mixerPrice, 1.04));
 }
 
+document.getElementById("workerPrice").innerHTML = workerPrice;
+document.getElementById("chiselPrice").innerHTML = chiselPrice;
+document.getElementById("mixerPrice").innerHTML = mixerPrice;
 document.getElementById("chipButton").onclick = click;
 document.getElementById("chiselButton").onclick = purchaseChisel;
 document.getElementById("workerButton").onclick = purchaseWorker;
@@ -78,7 +81,7 @@ function tick() {
     amountToIncrease += workers * 1;
     amountToIncrease += mixers * 1;
 
-    amountToIncrease /= 30;
+    amountToIncrease /= 10;
 
     paintChips += amountToIncrease;
 
@@ -118,17 +121,24 @@ function purchaseMixer() {
     }
 }
 
-
-
-$("#SaveButton").click(function (e) {
-    console.log("SaveButton Clicked");
-
+$("#SaveButton").click(save)
+function save(e) {
     e.preventDefault();
     $.ajax({
 
-        url: "Home/Save?PaintChips=" + paintChips + "&Chisels=" + chisels + "&Workers=" + workers + "&Mixers=" + mixers + "&Email=" + document.getElementById("EmailHidden"),   
+        url: "Home/Save?PaintChips=" + Math.floor(paintChips) + "&Chisels=" + Math.floor(chisels) + "&Workers=" + Math.floor(workers) + "&Mixers=" + Math.floor(mixers) + "&Name=" + document.getElementById("UserName").innerText,
         success: function () {
             alert("Saved");
         }
     })
-})
+}
+
+function saveInterval() {
+    $.ajax({
+        url: "Home/Save?PaintChips=" + Math.floor(paintChips) + "&Chisels=" + Math.floor(chisels) + "&Workers=" + Math.floor(workers) + "&Mixers=" + Math.floor(mixers) + "&Name=" + document.getElementById("UserName").innerText,
+        success: function () {
+        }
+    })
+}
+
+setInterval(saveInterval, 1000*5)
