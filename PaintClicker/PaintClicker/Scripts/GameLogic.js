@@ -24,6 +24,7 @@ for (var i = 0; i < mixers; i++) {
     mixerPrice = Math.round(Math.pow(mixerPrice, 1.04));
 }
 
+
 document.getElementById("workerPrice").innerHTML = workerPrice;
 document.getElementById("chiselPrice").innerHTML = chiselPrice;
 document.getElementById("mixerPrice").innerHTML = mixerPrice;
@@ -73,6 +74,7 @@ function click() {
     amountToIncrease += chisels * 1;
     amountToIncrease += mixers * 2;
 
+
     paintChips += amountToIncrease;
 
     document.getElementById("chipCount").innerHTML = Math.round(paintChips);
@@ -89,6 +91,7 @@ function tick() {
     paintChips += amountToIncrease;
 
     document.getElementById("chipCount").innerHTML = Math.round(paintChips);
+    document.getElementById("")
 }
 
 function purchaseChisel() {

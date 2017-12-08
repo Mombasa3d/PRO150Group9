@@ -62,11 +62,13 @@
     <title>Paint Clicker</title>
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/Clicker.css">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Atomic+Age"  rel="stylesheet"> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
 </head> 
+
+
 
 <body>
     <div class="row" >
@@ -106,23 +108,23 @@
             <div id="playerStats">
                 <p>Chips Generated:</p>
                 <div id="chipCount">@player.PaintChips</div>
-                <div id="chipsPerSecond">0</div>
+                <div class="playerStats">Chips Per Second:  <div id="chipsPerSecond">0</div></div>
                 <button class="paintClick" type="button" id="chipButton"></button>
             </div>
         </div>
 
         <div id="generationUpgrades" class="mainContainer">
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchPaintThinner">Paint Thinner</button> Price: 5</div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchSteroids">Steroids</button></div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchProsthetics">Prosthetics</button></div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchNanoBots">NanoBots</button></div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchElectricChisels">Electric Chisels</button></div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchPlasmaChisels">Plasma Chisels</button></div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchQuantumChisels">Quantum Chisels</button></div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchAntiMatterChisels">AntiMatter Chisels</button></div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchOscilators">Oscilators</button></div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchPaintCollider">Paint Collider</button></div>
-            <div id="playerStats"><button class="inventoryButton" type="button" id="ResearchPaintMultiverse" >Paint Multiverse</button></div>
+            <div ><button class="inventoryButton" type="button" id="ResearchPaintThinner">Paint Thinner</button> <br>Price: 5</div>
+            <div><button class="inventoryButton" type="button" id="ResearchSteroids">Steroids</button><br>Price: 10,000</div>
+            <div><button class="inventoryButton" type="button" id="ResearchProsthetics">Prosthetics</button><br>Price: 15,000</div>
+            <div><button class="inventoryButton" type="button" id="ResearchNanoBots">NanoBots</button><br>Price: 30,000</div>
+            <div><button class="inventoryButton" type="button" id="ResearchElectricChisels">Electric Chisels</button><br>Price: 100,000</div>
+            <div><button class="inventoryButton" type="button" id="ResearchPlasmaChisels">Plasma Chisels</button><br>Price: 250,000</div>
+            <div><button class="inventoryButton" type="button" id="ResearchQuantumChisels">Quantum Chisels</button><br>Price: 500,000</div>
+            <div><button class="inventoryButton" type="button" id="ResearchAntiMatterChisels">AntiMatter Chisels</button><br>Price: 750,000</div>
+            <div><button class="inventoryButton" type="button" id="ResearchOscilators">Oscilators</button><br>Price: 1,500,000</div>
+            <div><button class="inventoryButton" type="button" id="ResearchPaintCollider">Paint Collider</button><br>Price: 3,000,000</div>
+            <div><button class="inventoryButton" type="button" id="ResearchPaintMultiverse" >Paint Multiverse</button><br>Price: 100,000,000</div>
         </div>
     </div>
     @Html.ActionLink("Save", "Save", null, new { id = "SaveButton" })
