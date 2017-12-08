@@ -9,7 +9,7 @@ var tickRate = 1000/10;
 var chipsStart = 0;
 var chipsEnd = 0;
 var minute = [];
-var ResearchBonus = 0;
+var ResearchBonus = 1;
 
 
 for (var i = 0; i < chisels; i++) {
@@ -149,7 +149,7 @@ function researchThinner() {
     if (paintChips >= 5) {
         paintChips -= 5;
 
-        ResearchBonus += 2;
+        ResearchBonus += 1;
         thinner.disabled = true;
         thinner.style.backgroundColor = "#008000";
     }
@@ -158,7 +158,7 @@ function researchSteroids() {
     if (paintChips >= 10000) {
         paintChips -= 10000;
 
-        ResearchBonus += 4;
+        ResearchBonus += 3;
         steroids.disabled = true;
         steroids.style.backgroundColor = "#008000";
     }
@@ -167,7 +167,7 @@ function researchProsthetics() {
     if (paintChips >= 15000) {
         paintChips -= 15000;
 
-        ResearchBonus += 6;
+        ResearchBonus += 5;
         prosthetics.disabled = true;
         prosthetics.style.backgroundColor = "#008000";
     }
