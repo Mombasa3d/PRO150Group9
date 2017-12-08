@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebClickerGameModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Research">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PaintThinner" Type="bit" Nullable="false" />
+          <Property Name="Steriods" Type="bit" Nullable="false" />
+          <Property Name="Prosthetics" Type="bit" Nullable="false" />
+          <Property Name="NanoBots" Type="bit" Nullable="false" />
+          <Property Name="ElectricChisels" Type="bit" Nullable="false" />
+          <Property Name="PlasmaChisels" Type="bit" Nullable="false" />
+          <Property Name="QuantumChisels" Type="bit" Nullable="false" />
+          <Property Name="AntiMatterChisels" Type="bit" Nullable="false" />
+          <Property Name="Oscilators" Type="bit" Nullable="false" />
+          <Property Name="PaintCollider" Type="bit" Nullable="false" />
+          <Property Name="Multiverse" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="WebClickerGameModelStoreContainer">
+          <EntitySet Name="Research" EntityType="Self.Research" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebClickerGameModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Research">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaintThinner" Type="Boolean" Nullable="false" />
+          <Property Name="Steriods" Type="Boolean" Nullable="false" />
+          <Property Name="Prosthetics" Type="Boolean" Nullable="false" />
+          <Property Name="NanoBots" Type="Boolean" Nullable="false" />
+          <Property Name="ElectricChisels" Type="Boolean" Nullable="false" />
+          <Property Name="PlasmaChisels" Type="Boolean" Nullable="false" />
+          <Property Name="QuantumChisels" Type="Boolean" Nullable="false" />
+          <Property Name="AntiMatterChisels" Type="Boolean" Nullable="false" />
+          <Property Name="Oscilators" Type="Boolean" Nullable="false" />
+          <Property Name="PaintCollider" Type="Boolean" Nullable="false" />
+          <Property Name="Multiverse" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="WebClickerGameResearch" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Researches" EntityType="Self.Research" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebClickerGameModelStoreContainer" CdmEntityContainer="WebClickerGameResearch">
+          <EntitySetMapping Name="Researches">
+            <EntityTypeMapping TypeName="WebClickerGameModel.Research">
+              <MappingFragment StoreEntitySet="Research">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PaintThinner" ColumnName="PaintThinner" />
+                <ScalarProperty Name="Steriods" ColumnName="Steriods" />
+                <ScalarProperty Name="Prosthetics" ColumnName="Prosthetics" />
+                <ScalarProperty Name="NanoBots" ColumnName="NanoBots" />
+                <ScalarProperty Name="ElectricChisels" ColumnName="ElectricChisels" />
+                <ScalarProperty Name="PlasmaChisels" ColumnName="PlasmaChisels" />
+                <ScalarProperty Name="QuantumChisels" ColumnName="QuantumChisels" />
+                <ScalarProperty Name="AntiMatterChisels" ColumnName="AntiMatterChisels" />
+                <ScalarProperty Name="Oscilators" ColumnName="Oscilators" />
+                <ScalarProperty Name="PaintCollider" ColumnName="PaintCollider" />
+                <ScalarProperty Name="Multiverse" ColumnName="Multiverse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
