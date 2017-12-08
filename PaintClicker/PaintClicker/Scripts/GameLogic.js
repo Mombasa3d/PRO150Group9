@@ -4,7 +4,7 @@ var chiselPrice = 50;
 var workers = parseInt(document.getElementById("workerAmount").innerText);
 var workerPrice = 10;
 var mixers = parseInt(document.getElementById("mixerAmount").innerText);
-var mixerPrice = 25;
+var mixerPrice = 100;
 var tickRate = 1000/10;
 var chipsStart = 0;
 var chipsEnd = 0;
@@ -82,7 +82,7 @@ function tick() {
     var amountToIncrease = 0;
 
     amountToIncrease += workers * 1 * ResearchBonus;
-    amountToIncrease += mixers * 1 * ResearchBonus;
+    amountToIncrease += mixers * 2 * ResearchBonus;
 
     amountToIncrease /= 10;
 
@@ -94,7 +94,7 @@ function tick() {
 function purchaseChisel() {
     if (paintChips >= chiselPrice) {
         paintChips -= chiselPrice;
-        chiselPrice = Math.round(Math.pow(chiselPrice, 1.1));
+        chiselPrice = Math.round(chiselPrice*1.2);
         chisels++;
 
         document.getElementById("chiselAmount").innerHTML = chisels;
@@ -105,7 +105,7 @@ function purchaseChisel() {
 function purchaseWorker() {
     if (paintChips >= workerPrice) {
         paintChips -= workerPrice;
-        workerPrice = Math.round(Math.pow(workerPrice, 1.07));
+        workerPrice = Math.round(workerPrice*1.1);
         workers++;
 
         document.getElementById("workerAmount").innerHTML = workers;
@@ -116,7 +116,7 @@ function purchaseWorker() {
 function purchaseMixer() {
     if (paintChips >= mixerPrice) {
         paintChips -= mixerPrice;
-        mixerPrice = Math.round(Math.pow(mixerPrice, 1.5));
+        mixerPrice = Math.round(mixerPrice * 1.5);
         mixers++;
 
         document.getElementById("mixerAmount").innerHTML = mixers;
@@ -143,11 +143,11 @@ var oscilators = document.getElementById("ResearchOscilators");
     document.getElementById("ResearchOscilators").onclick = researchOscilators;
 var collidor = document.getElementById("ResearchPaintCollidor");
     document.getElementById("ResearchPaintCollider").onclick = researchCollider;
-//var multiverse = document.getElementById("ResearchPaintMultiverse").onclick = researchMultiverse;
+    var multiverse = document.getElementById("ResearchPaintMultiverse").onclick = researchMultiverse;
 
 function researchThinner() {
-    if (paintChips >= 5) {
-        paintChips -= 5;
+    if (paintChips >= 500) {
+        paintChips -= 500;
 
         ResearchBonus += 1;
         thinner.disabled = true;
@@ -155,81 +155,82 @@ function researchThinner() {
     }
 }
 function researchSteroids() {
-    if (paintChips >= 10000) {
-        paintChips -= 10000;
+    if (paintChips >= 1000) {
+        paintChips -= 1000;
 
-        ResearchBonus += 3;
+        ResearchBonus += 1;
         steroids.disabled = true;
         steroids.style.backgroundColor = "#008000";
     }
 }
 function researchProsthetics() {
-    if (paintChips >= 15000) {
-        paintChips -= 15000;
+    if (paintChips >= 1500) {
+        paintChips -= 1500;
 
-        ResearchBonus += 5;
+        ResearchBonus += 1.5;
         prosthetics.disabled = true;
         prosthetics.style.backgroundColor = "#008000";
     }
 }
 function researchNano() {
-    if (paintChips >= 30000) {
-        paintChips -= 30000;
+    if (paintChips >= 3000) {
+        paintChips -= 3000;
 
-        ResearchBonus *= 2;
+        ResearchBonus += 1.5;
         nano.disabled = true;
         nano.style.backgroundColor = "#008000";
     }
 } function researchElectric() {
-    if (paintChips >= 100000) {
-        paintChips -= 100000;
+    if (paintChips >= 10000) {
+        paintChips -= 10000;
 
-        ResearchBonus *= 5;
+        ResearchBonus += 2;
         electric.disabled = true;
         electric.style.backgroundColor = "#008000";
     }
 } function researchPlasma() {
-    if (paintChips >= 250000) {
-        paintChips -= 250000;
+    if (paintChips >= 25000) {
+        paintChips -= 25000;
 
-        ResearchBonus *= 8;
+        ResearchBonus += 4;
         plasma.disabled = true;
         plasma.style.backgroundColor = "#008000";
     }
 } function researchQuantum() {
-    if (paintChips >= 500000) {
-        paintChips -= 500000;
+    if (paintChips >= 50000) {
+        paintChips -= 50000;
 
-        ResearchBonus *= 10;
+        ResearchBonus += 4;
         quantum.disabled = true;
         quantum.style.backgroundColor = "#008000";
     }
 } function researchAntiMatter() {
-    if (paintChips >= 750000) {
-        paintChips -= 750000
+    if (paintChips >= 75000) {
+        paintChips -= 75000
 
-        ResearchBonus *= 8;
+        ResearchBonus += 5;
         antimatter.disabled = true;
         antimatter.style.backgroundColor = "#008000";
     }
 } function researchOscilators() {
-    if (paintChips >= 1500000) {
-        paintChips -= 1500000;
+    if (paintChips >= 15000) {
+        paintChips -= 15000;
 
-        ResearchBonus *= 5;
+        ResearchBonus += 4;
         oscilators.disabled = true;
+        oscilators.style.backgroundColor = "#008000";
     }
 } function researchCollider() {
-    if (paintChips >= 3000000) {
-        paintChips -= 3000000;
+    if (paintChips >= 30000) {
+        paintChips -= 30000;
 
-        ResearchBonus *= 3;
+        ResearchBonus += 5;
         collidor.disabled = true;
         collidor.style.backgroundColor = "#008000";
     }
     function researchMultiverse() {
-        if (paintChips >= 100000000) {
-            paintChips -= 100000000;
+        if (paintChips >= 10000000) {
+            paintChips -= 10000000;
 
             ResearchBonus *= 2;
             multiverse.disabled = true;
