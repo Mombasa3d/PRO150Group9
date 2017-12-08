@@ -15,7 +15,6 @@ namespace PaintClicker.Controllers
         {
             return View();
         }
-
         
         public ActionResult Save(int PaintChips, int Chisels, int Workers, int Mixers,string Name)
         {
