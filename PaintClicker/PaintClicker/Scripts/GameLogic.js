@@ -122,10 +122,7 @@ function purchaseMixer() {
 }
 
 $("#SaveButton").click(save)
-
-function save (e) {
-    console.log("SaveButton Clicked");
-
+function save(e) {
     e.preventDefault();
     $.ajax({
 
@@ -136,4 +133,12 @@ function save (e) {
     })
 }
 
-setInterval(save, 1000*15)
+function saveInterval() {
+    $.ajax({
+        url: "Home/Save?PaintChips=" + Math.floor(paintChips) + "&Chisels=" + Math.floor(chisels) + "&Workers=" + Math.floor(workers) + "&Mixers=" + Math.floor(mixers) + "&Name=" + document.getElementById("UserName").innerText,
+        success: function () {
+        }
+    })
+}
+
+setInterval(saveInterval, 1000*5)
