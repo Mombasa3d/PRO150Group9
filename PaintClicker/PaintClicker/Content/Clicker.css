@@ -153,3 +153,7 @@ body {
         height: 800px;
     }
 }
+
+#fallingChips{
+    z-index: -1;
+}
