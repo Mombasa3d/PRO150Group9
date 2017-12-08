@@ -4,6 +4,8 @@
 
 body {
     margin: 0;
+    background: url(http://www.onlygfx.com/wp-content/uploads/2016/02/peeling-red-wall.jpg);
+    z-index: -2;
 }
 
 /* Style the header */
@@ -109,7 +111,6 @@ body {
     position: relative;
     bottom: 10%;
     background: url(https://png.icons8.com/?id=17516&size=2x) 0px 0px no-repeat;
-    z-index: -2;
     font-size: 50px;
     font-family: 'Gloria Hallelujah', cursive;
 }

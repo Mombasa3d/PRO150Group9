@@ -1401,6 +1401,7 @@ body {
     line-height: 1.42857143;
     color: #c8c8c8;
     background: url(http://www.onlygfx.com/wp-content/uploads/2016/02/peeling-red-wall.jpg);
+    z-index: -2;
     /*background-color: #272b30;*/
 }
 
