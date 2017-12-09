@@ -146,7 +146,7 @@ var oscilators = document.getElementById("ResearchOscilators");
     document.getElementById("ResearchOscilators").onclick = researchOscilators;
 var collidor = document.getElementById("ResearchPaintCollidor");
     document.getElementById("ResearchPaintCollider").onclick = researchCollider;
-    var multiverse = document.getElementById("ResearchPaintMultiverse").onclick = researchMultiverse;
+    //var multiverse = document.getElementById("ResearchPaintMultiverse").onclick = researchMultiverse;
 
 function researchThinner() {
     if (paintChips >= 500) {
