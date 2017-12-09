@@ -100,7 +100,7 @@ body {
 }
 
 .mainContainer {
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .5);
     align-content: center;
     vertical-align: central;
     margin-top: 15px;
@@ -168,10 +168,29 @@ body {
 
 .navbar-inverse {
     background-color: transparent;
-    background-image: url(http://www.onlygfx.com/wp-content/uploads/2017/02/red-splatter-2.png);
-    background-position:center;
+    background-image: linear-gradient(#CC4A41, red);
     background-size: cover;
 }
+
+#chipCount{
+   margin-top:15px;
+}
+
+#saveButton {
+    margin-top:25px;
+    text-align: center;
+    font-size: 30px;
+    background: rgba(0, 0, 0, .30);
+    border: solid;
+    border-color: black;
+}
+
+    #saveButton:active {
+        color: yellow;
+        background-color: ;
+        box-shadow: 0 2px #666;
+        transform: translateY(4px);
+    }
 
 .navbar-inverse img{
     max-height: 100%;
